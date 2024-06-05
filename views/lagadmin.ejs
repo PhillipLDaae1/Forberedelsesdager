@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lag Admin</title>
+    <link rel="stylesheet" href="/global.css">
+</head>
+<body>
+    <header>
+        <div class="levegg_heading">
+            <a style="text-decoration: none;" href="/"><h1>Levegg</h1></a>
+            <a style="text-decoration: none;" href="/"><h1>Videregående</h1></a>
+        </div>
+    </header>
+
+    <main>
+        <h1>Lag admin</h1>
+        <br>
+
+        <form action="/lagadmin" method="POST">
+            <input type="text" name="fornavn" placeholder="Fornavn">
+            <input type="text" name="etternavn" placeholder="Etternavn">
+            <input type="text" name="adresse" placeholder="Adresse">
+            <input type="number" name="telefonnummer" placeholder="Telefonnummer">
+            <input type="email" name="email" placeholder="Email">
+            <input type="text" name="brukernavn" placeholder="Brukernavn">
+            <select name="rolle">
+                <% roller.forEach(function(rolle) { %>
+                    <option value="<%= rolle.id %>"><%= rolle.navn %></option>
+                <% }) %>
+            </select>
+            <input type="password" name="passord" placeholder="Passord">
+            
+            <button type="submit">Opprett rektor / larer</button>
+        </form>
+    </main>
+    
+</body>
+</html>

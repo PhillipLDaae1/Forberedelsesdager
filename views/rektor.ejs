@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rektor</title>
+    <link rel="stylesheet" href="/global.css">
+</head>
+<body>
+    <header>
+        <div class="levegg_heading">
+            <a style="text-decoration: none;" href="/"><h1>Levegg</h1></a>
+            <a style="text-decoration: none;" href="/"><h1>Videregående</h1></a>
+        </div>
+        <form action="/logout" method="POST">
+            <button class="heading_button" type="submit">Logg ut</button>
+        </form>
+    </header>
+
+    <main>
+        <h1 style="margin-top: 1rem;">Rektor</h1>
+
+        <div class="dashboard_container">
+            <ul class="dashboard_list">
+                <% brukere.forEach(function(bruker) { %>
+                    <li>Fornavn: <%= bruker.fornavn %></li>
+                    <li>Etternavn: <%= bruker.etternavn %></li>
+                    <li>Adresse: <%= bruker.adresse %></li>
+                    <li>Telefonnummer: <%= bruker.telefonnummer %></li>
+                    <li>Email: <%= bruker.email %></li>
+                    <li>Brukernavn: <%= bruker.brukernavn %></li>
+                    <li style="color: <%= bruker.vilblielev ? 'green' : 'red' %>;">Vil bli elev: <%= bruker.vilblielev ? 'Ja' : 'Nei' %></li>
+                    <li style="color: <%= bruker.tilbyplass ? 'green' : 'red' %>;">Tilbudt plass: <%= bruker.tilbyplass ? 'Ja' : 'Nei' %></li>
+                    <li style="color: <%= bruker.akseptert ? 'green' : 'red' %>;">Akseptert plass: <%= bruker.akseptert ? 'Ja' : 'Nei' %></li>
+                    <% if (bruker.vilblielev && !bruker.tilbyplass) { %> 
+                        <form class="userchoice_form" action="/rektor/tilbyplass" method="post">
+                        <input type="hidden" name="brukernavn" value="<%= bruker.brukernavn %>" />
+                        <input type="submit" value="Tilby plass" />
+                        </form> 
+                    <% } %> 
+                    
+                    <form class="deleteuser_form" action="/slettbruker" method="post">
+                        <input type="hidden" name="brukerid" value="<%= bruker.id %>" />
+                        <input type="submit" value="Slett elev" />
+                    </form>
+                    <br>
+                <% }); %>
+             </ul>
+        </div>
+        
+    </main>
+    
+</body>
+</body>
+</body>
+</html>

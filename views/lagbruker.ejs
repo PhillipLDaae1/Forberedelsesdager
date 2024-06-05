@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lag bruker</title>
+    <link rel="stylesheet" href="/global.css">
+
+</head>
+<body>
+    <header>
+        <div class="levegg_heading">
+            <a style="text-decoration: none;" href="/"><h1>Levegg</h1></a>
+            <a style="text-decoration: none;" href="/"><h1>Videregående</h1></a>
+        </div>
+    </header>
+
+    <main>
+
+        <div class="form_container">
+            <form class="create_form" action="/lagbruker" method="POST">
+                <h2 style="margin-bottom: 1.5rem;">Opprett en bruker:</h2>
+                <label for="fornavn">Fornavn:</label>
+                <input type="text" id="fornavn" name="fornavn" placeholder="Fornavn">
+                <br>
+                <label for="etternavn">Etternavn:</label>
+                <input type="text" id="etternavn" name="etternavn" placeholder="Etternavn">
+                <br>
+                <label for="adresse">Adresse:</label>
+                <input type="text" id="adresse" name="adresse" placeholder="Adresse">
+                <br>
+                <label for="telefonnummer">Telefonnummer:</label>
+                <input type="number" id="telefonnummer" name="telefonnummer" placeholder="Telefonnummer">
+                <br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Email">
+                <br>
+                <label for="brukernavn">Brukernavn:</label>
+                <input type="text" id="brukernavn" name="brukernavn" placeholder="Brukernavn">
+                <br>
+                <label for="passord">Passord:</label>
+                <input type="password" id="passord" name="passord" placeholder="Passord">
+                <br>
+                
+                <button type="submit">Opprett bruker</button>
+            </form>
+        </div>
+        </div>
+        
+    </main>
+    
+</body>
+</html>

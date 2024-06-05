@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elev</title>
+    <link rel="stylesheet" href="/global.css">
+</head>
+<body>
+    <header>
+        <div class="levegg_heading">
+            <a style="text-decoration: none;" href="/"><h1>Levegg</h1></a>
+            <a style="text-decoration: none;" href="/"><h1>Videregående</h1></a>
+        </div>
+        <form action="/logout" method="POST">
+            <button class="heading_button" type="submit">Logg ut</button>
+        </form>
+    </header>
+    </header>
+
+    <main>
+        <br>
+
+        <h1>Elev Dashboard</h1>
+
+        <br>
+
+        <h2>Velkommen, <%= bruker.fornavn %></h2>
+
+        <br>
+
+        <div class="dashboard_container">
+            <ul class="dashboard_list">
+                <li>Fornavn: <%= bruker.fornavn %></li>
+                <li>Etternavn: <%= bruker.etternavn %></li>
+                <li>Adresse: <%= bruker.adresse %></li>
+                <li>Telefonnummer: <%= bruker.telefonnummer %></li>
+                <li>Email: <%= bruker.email %></li>
+                <li>Brukernavn: <%= bruker.brukernavn %></li>
+                <li style="color: <%= bruker.vilblielev ? 'green' : 'red' %>;">Vil bli elev: <%= bruker.vilblielev ? 'Ja' : 'Nei' %></li>
+                <li style="color: <%= bruker.tilbyplass ? 'green' : 'red' %>;">Tilbudt plass: <%= bruker.tilbyplass ? 'Ja' : 'Nei' %></li>
+                <li style="color: <%= bruker.akseptert ? 'green' : 'red' %>;">Akseptert plass: <%= bruker.akseptert ? 'Ja' : 'Nei' %></li>
+
+                <% if (bruker.tilbyplass && !bruker.akseptert) { %>
+                <form class="userchoice_form" action="/elev/akseptert" method="POST">
+                    <input type="hidden" name="brukerId" value="<%= bruker.id %>">
+                    <input type="submit" value="Aksepter plass">
+                </form>
+        <% } %>
+    </ul>
+        </div>
+        
+
+        <br>
+
+        
+        </main>
+    
+</body>
+</body>
+</html>

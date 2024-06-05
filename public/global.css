@@ -1,0 +1,165 @@
+* {
+    color: whitesmoke;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: rgb(32, 32, 32);
+}
+
+header {
+    display: flex;
+    direction: row;
+    justify-content: space-between;
+    background-color: #3C3C3C;
+    height: 6rem;
+    overflow: auto;
+    padding: 0.5rem;
+}
+
+h1 {
+    margin: 0;
+}
+
+.levegg_heading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.heading_button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 50px;
+    background-color: #3C3C3C;
+    text-decoration: none;
+    border-radius: 1rem;
+
+}
+
+.index_container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 75vh;
+}
+
+.index_button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    width: 200px;
+    height: 100px;
+    background-color: #3C3C3C;
+    text-decoration: none;
+    border-radius: 1rem;
+}
+
+.form_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100h;
+}
+
+.create_form {
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #3C3C3C;
+    padding: 2rem;
+    border-radius: 1rem;
+    width: 30%;
+}
+
+.create_form input {
+    background-color: #2C2C2C;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    width: 75%;
+    border-radius: 0.5rem;
+    border: none;
+}
+
+.create_form button {
+    background-color: #2C2C2C;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    width: 30%;
+    border-radius: 0.5rem;
+    border: none;
+    color: whitesmoke;
+}
+
+.dashboard_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+}
+
+.dashboard_list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+    padding: 1rem;
+}
+
+.dashboard_list li {
+    background-color: #3C3C3C;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard_list li h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.dashboard_list li p {
+    color: #888;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.dashboard_list li a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.dashboard_list li a:hover {
+    text-decoration: underline;
+}
+
+.userchoice_form input {
+    background-color: #1e552d;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    width: 70%;
+    border-radius: 0.5rem;
+    border: none;
+    color: whitesmoke;
+    cursor: pointer;
+}
+
+.deleteuser_form input {
+    background-color: #552d1e;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    width: 70%;
+    border-radius: 0.5rem;
+    border: none;
+    color: whitesmoke;
+    cursor: pointer;
+}
